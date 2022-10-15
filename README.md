@@ -1,10 +1,20 @@
-# RoboticsLab4
+# Laboratorio 4 - Cinemática Directa - Phantom X - ROS
+
+### Por: Sebastian Campiño Figueroa, Julián Felipe Luna Castro y Diego Fernando Mejía Hernández
+
+Este repositorio contiene las memorias y programas desarrollados durante la cuarta practica de laboratorio de la materia Robótica. Esta práctica tiene como objetivo afianzar los conocimientos de cinemática directa mediante el uso de los robots Phantom X Pincher, definiendo los parámetros de Denavit Hartenberg, creando una simulación en Matlab, y comunicando el robot real mediante el uso de ROS, enviando mensajes de cambio de posición para cada una de las articulaciones de forma secuencial.
+
 ## Requerimientos
 * Ubuntu 20.04 LTS o version compatible
-* ROS Noetic 
-* MATLAB 2015b o superior
-* Robotics toolbox de mathworks
-* Robot PhantomX Pincher
+* ROS Noetic
+* Espacio de trabajo para catkin correctamente configurado.
+* Paquetes de Dynamixel Workbench.  Tomado de: https://github.com/fegonzalez7/rob_unal_clase3
+* Paquete del robot Phantom X. Tomado de: https://github.com/felipeg17/px_robot.
+* MATLAB 2015b o superior.
+* Robotics toolbox de mathworks.
+* Toolbox de robótica de Peter Corke.
+* Actitud y ganas de aprender.
+
 
 ## 1. Parametros DH y uso del toolBox
 Primero medimos las distacias entre cada una de las articulaciones para luego sacar los parametros DH del robot.
@@ -30,8 +40,8 @@ Y estos son los resultados:
 ![Q5](imagenes/q5.jpeg)
 
 ## 2. Conecciones con MatLab
-Primero tenemos que crear un scrip que sea capas de publicar cada tópico del controlador de junta.
-Este scrip lo que hace es crear el cliente de pose y posición para luego poner el vector objetivo de los motores, cambiar al ID del controlador que se va a utilizar y asignarlo al motor, convertir los grados a 10 bits y por último verificar los límites y enviar el mensaje.
+Primero tenemos que crear un script que sea capas de publicar cada tópico del controlador de junta.
+Este script lo que hace es crear el cliente de pose y posición para luego poner el vector objetivo de los motores, cambiar al ID del controlador que se va a utilizar y asignarlo al motor, convertir los grados a 10 bits y por último verificar los límites y enviar el mensaje.
 
 ![Scrip](imagenes/Juntas.jpeg)
 
@@ -39,11 +49,18 @@ En esta parte básicamente se revisa si el tópico esta activo luego se crea el 
 
 ![Simu](imagenes/Simulacion.jpeg)
 
-## 3. Union de todo
-Para la parte final utlizamos un ciclo para enviar secuencialmente el mensaje a cada motor.
+## 3. ROS:
+Creamos un script en Python que permite seleccionar cada una de las articulaciones del robot, desde cadera hasta muñeca, subiendo o bajando con las teclas W y S, y publicando mensajes de cambio de posición objetivo para cada una de las articulaciones de forma independiente con las teclas A para la posición de Home y D para la posición deseada.
+
+Para iniciar el script, *roscore* debe estar corriendo en una terminal y el archivo *px_controllers.launch* del paquete *px_robot* debe estar corriendo en otra, y luego inicializar el script con Python en una tercera consola.
+
+Este script es el llamado *script.py* ubicado en este mismo repositorio y los resultados de su funcionamiento pueden observarse en el video adjunto.
+
+## 4. Union de todo
+Para la parte final utlizamos un ciclo para enviar secuencialmente el mensaje a cada motor. En este momento tambien debe estar corriendo *roscore* y *px_controllers.launch*:
 
 ![Todo](imagenes/Todo.png)
 
 ## Conclusiones
 * ROS funciona de manera independiente a Matlab o Python, los scripts desarrollados en estos programas solo nos permiten comunicarnos con los diferentes nodos que se encuentren en ejecución.
-* Por medio de los paquetes provistos por Dynamixel es posible controlar el Robot PhantomX Pincher de manera sencilla, adicionalmente con el repositorio PXRobot es posible que la comunicación entre los servomotores se de uno a uno de manera serial, lo cuál facilitó la modificación de las poses del robot en Matlab
+* Por medio de los paquetes provistos por Dynamixel es posible controlar el Robot PhantomX Pincher de manera sencilla, adicionalmente con el repositorio PXRobot es posible que la comunicación entre los servomotores se de uno a uno de manera serial, lo cuál facilitó la modificación de las poses del robot en Matlab y permite llevar el robot a cualquier posicion deseada dentro de los limite articulares.
