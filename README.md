@@ -40,6 +40,7 @@ Y estos son los resultados:
 ![Q5](imagenes/q5.jpeg)
 
 ## 2. Conecciones con MatLab
+https://drive.google.com/file/d/1igj19d1UvNl4yN4Re_1ROIIgYwJcN4xh/view?usp=sharing
 Primero tenemos que crear un script que sea capas de publicar cada tópico del controlador de junta.
 Este script lo que hace es crear el cliente de pose y posición para luego poner el vector objetivo de los motores, cambiar al ID del controlador que se va a utilizar y asignarlo al motor, convertir los grados a 10 bits y por último verificar los límites y enviar el mensaje.
 
@@ -50,7 +51,7 @@ En esta parte básicamente se revisa si el tópico esta activo luego se crea el 
 ![Simu](imagenes/Simulacion.jpeg)
 
 ## 3. ROS - Python:
-<iframe src="https://drive.google.com/file/d/1_-KfOsTiQ6pyHVKFeQCBFIZZih_lxKfY/preview" width="640" height="480" allow="autoplay"></iframe>
+https://drive.google.com/file/d/1_-KfOsTiQ6pyHVKFeQCBFIZZih_lxKfY/view?usp=sharing
 
 Creamos un script en Python que permite seleccionar cada una de las articulaciones del robot, desde cadera hasta muñeca, subiendo o bajando con las teclas W y S, y publicando mensajes de cambio de posición objetivo para cada una de las articulaciones de forma independiente con las teclas A para la posición de Home y D para la posición deseada.
 
