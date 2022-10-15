@@ -49,7 +49,9 @@ En esta parte básicamente se revisa si el tópico esta activo luego se crea el 
 
 ![Simu](imagenes/Simulacion.jpeg)
 
-## 3. ROS:
+## 3. ROS - Python:
+<iframe src="https://drive.google.com/file/d/1_-KfOsTiQ6pyHVKFeQCBFIZZih_lxKfY/preview" width="640" height="480" allow="autoplay"></iframe>
+
 Creamos un script en Python que permite seleccionar cada una de las articulaciones del robot, desde cadera hasta muñeca, subiendo o bajando con las teclas W y S, y publicando mensajes de cambio de posición objetivo para cada una de las articulaciones de forma independiente con las teclas A para la posición de Home y D para la posición deseada.
 
 Para iniciar el script, *roscore* debe estar corriendo en una terminal y el archivo *px_controllers.launch* del paquete *px_robot* debe estar corriendo en otra, y luego inicializar el script con Python en una tercera consola.
