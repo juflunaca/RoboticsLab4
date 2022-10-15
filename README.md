@@ -64,3 +64,6 @@ Para la parte final utlizamos un ciclo para enviar secuencialmente el mensaje a 
 ## Conclusiones
 * ROS funciona de manera independiente a Matlab o Python, los scripts desarrollados en estos programas solo nos permiten comunicarnos con los diferentes nodos que se encuentren en ejecución.
 * Por medio de los paquetes provistos por Dynamixel es posible controlar el Robot PhantomX Pincher de manera sencilla, adicionalmente con el repositorio PXRobot es posible que la comunicación entre los servomotores se de uno a uno de manera serial, lo cuál facilitó la modificación de las poses del robot en Matlab y permite llevar el robot a cualquier posicion deseada dentro de los limite articulares.
+##Video
+En el siguiente Drive están los dos videos correspondientes al laboratorio. (No se uso github para eso debido al peso de los mismos):
+https://drive.google.com/drive/folders/13NdtriyYnkKi-7e28DYfCpPBhN1BJRzy?usp=sharing
