@@ -1,5 +1,11 @@
 # RoboticsLab4
- Development of the fourth robotics laboratory, focused on using ROS to manipulate the Phantom X Pincher. 
+## Requerimientos
+* Ubuntu 20.04 LTS o version compatible
+* ROS Noetic 
+* MATLAB 2015b o superior
+* Robotics toolbox de mathworks
+* Robot PhantomX Pincher
+
 ## 1. Parametros DH y uso del toolBox
 Primero medimos las distacias entre cada una de las articulaciones para luego sacar los parametros DH del robot.
 ![Diagrama](imagenes/Dibujo.png)
@@ -38,3 +44,6 @@ Para la parte final utlizamos un ciclo para enviar secuencialmente el mensaje a 
 
 ![Todo](imagenes/Todo.png)
 
+## Conclusiones
+* ROS funciona de manera independiente a Matlab o Python, los scripts desarrollados en estos programas solo nos permiten comunicarnos con los diferentes nodos que se encuentren en ejecución.
+* Por medio de los paquetes provistos por Dynamixel es posible controlar el Robot PhantomX Pincher de manera sencilla, adicionalmente con el repositorio PXRobot es posible que la comunicación entre los servomotores se de uno a uno de manera serial, lo cuál facilitó la modificación de las poses del robot en Matlab
