@@ -39,8 +39,9 @@ Y estos son los resultados:
 ![Q3](imagenes/q3.jpeg)
 ![Q5](imagenes/q5.jpeg)
 
-## 2. Conecciones con MatLab
+## 2. Conecciones con MatLab:
 https://drive.google.com/file/d/1igj19d1UvNl4yN4Re_1ROIIgYwJcN4xh/view?usp=sharing
+
 Primero tenemos que crear un script que sea capas de publicar cada tópico del controlador de junta.
 Este script lo que hace es crear el cliente de pose y posición para luego poner el vector objetivo de los motores, cambiar al ID del controlador que se va a utilizar y asignarlo al motor, convertir los grados a 10 bits y por último verificar los límites y enviar el mensaje.
 
