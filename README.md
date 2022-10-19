@@ -40,36 +40,39 @@ Y estos son los resultados:
 ![Q5](imagenes/q5.jpeg)
 
 ## 2. Conecciones con MatLab:
-https://drive.google.com/file/d/1igj19d1UvNl4yN4Re_1ROIIgYwJcN4xh/view?usp=sharing
 
-Primero tenemos que crear un script que sea capas de publicar cada tópico del controlador de junta.
+Primero tenemos que crear un script que sea capaz de publicar cada tópico del controlador de junta.
 Este script lo que hace es crear el cliente de pose y posición para luego poner el vector objetivo de los motores, cambiar al ID del controlador que se va a utilizar y asignarlo al motor, convertir los grados a 10 bits y por último verificar los límites y enviar el mensaje.
 
-![Scrip](imagenes/Juntas.jpeg)
+![Script](imagenes/Juntas.jpeg)
 
-En esta parte básicamente se revisa si el tópico esta activo luego se crea el publicador, se inicializa la recepción del mensaje del suscriptor y luego se imprime el valor de cada junta con su valor en radianes.
+En esta parte básicamente se revisa si el tópico está activo, luego se crea el publicador, se inicializa la recepción del mensaje del suscriptor y luego se imprime el valor de cada junta con su valor en radianes.
 
-![Simu](imagenes/Simulacion.jpeg)
+![Simulacion](imagenes/Simulacion.jpeg)
 
 ## 3. ROS - Python:
-https://drive.google.com/file/d/1_-KfOsTiQ6pyHVKFeQCBFIZZih_lxKfY/view?usp=sharing
 
 Creamos un script en Python que permite seleccionar cada una de las articulaciones del robot, desde cadera hasta muñeca, subiendo o bajando con las teclas W y S, y publicando mensajes de cambio de posición objetivo para cada una de las articulaciones de forma independiente con las teclas A para la posición de Home y D para la posición deseada.
 
 Para iniciar el script, *roscore* debe estar corriendo en una terminal y el archivo *px_controllers.launch* del paquete *px_robot* debe estar corriendo en otra, y luego inicializar el script con Python en una tercera consola.
 
-Este script es el llamado *script.py* ubicado en este mismo repositorio y los resultados de su funcionamiento pueden observarse en el video adjunto.
+Este script es el llamado *script.py* ubicado en este mismo repositorio y los resultados de su funcionamiento pueden observarse en el siguiente video:
+
+[Video Python](https://drive.google.com/file/d/1_-KfOsTiQ6pyHVKFeQCBFIZZih_lxKfY/view)
 
 ## 4. Union de todo
 Para la parte final utlizamos un ciclo para enviar secuencialmente el mensaje a cada motor. En este momento tambien debe estar corriendo *roscore* y *px_controllers.launch*:
 
 ![Todo](imagenes/Todo.png)
-![Video Matlab](https://drive.google.com/file/d/1igj19d1UvNl4yN4Re_1ROIIgYwJcN4xh/view)
+
+
+[Video Matlab](https://drive.google.com/file/d/1igj19d1UvNl4yN4Re_1ROIIgYwJcN4xh/view)
 
 ## Conclusiones
 * ROS funciona de manera independiente a Matlab o Python, los scripts desarrollados en estos programas solo nos permiten comunicarnos con los diferentes nodos que se encuentren en ejecución.
 * Por medio de los paquetes provistos por Dynamixel es posible controlar el Robot PhantomX Pincher de manera sencilla, adicionalmente con el repositorio PXRobot es posible que la comunicación entre los servomotores se de uno a uno de manera serial, lo cuál facilitó la modificación de las poses del robot en Matlab y permite llevar el robot a cualquier posicion deseada dentro de los limite articulares.
-## Video:
-En el siguiente Drive están los dos videos correspondientes al laboratorio. (No se uso github para eso debido al peso de los mismos):
+
+## Videos:
+En el siguiente Drive están los dos videos correspondientes al laboratorio. (No se usó github para eso debido al peso de los mismos):
 https://drive.google.com/drive/folders/13NdtriyYnkKi-7e28DYfCpPBhN1BJRzy?usp=sharing
 
