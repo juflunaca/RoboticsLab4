@@ -64,6 +64,7 @@ Este script es el llamado *script.py* ubicado en este mismo repositorio y los re
 Para la parte final utlizamos un ciclo para enviar secuencialmente el mensaje a cada motor. En este momento tambien debe estar corriendo *roscore* y *px_controllers.launch*:
 
 ![Todo](imagenes/Todo.png)
+![Video Matlab](https://drive.google.com/file/d/1igj19d1UvNl4yN4Re_1ROIIgYwJcN4xh/view)
 
 ## Conclusiones
 * ROS funciona de manera independiente a Matlab o Python, los scripts desarrollados en estos programas solo nos permiten comunicarnos con los diferentes nodos que se encuentren en ejecución.
@@ -71,3 +72,4 @@ Para la parte final utlizamos un ciclo para enviar secuencialmente el mensaje a 
 ## Video:
 En el siguiente Drive están los dos videos correspondientes al laboratorio. (No se uso github para eso debido al peso de los mismos):
 https://drive.google.com/drive/folders/13NdtriyYnkKi-7e28DYfCpPBhN1BJRzy?usp=sharing
+
